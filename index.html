@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angular2Do - app</title>
 
     <!-- 1. Load libraries -->
@@ -28,11 +29,47 @@
                 .then(null, console.error.bind(console));
     </script>
 
+    <!-- 3. UI libraries (Material design lite) -->
+    <link rel="stylesheet" href="/bower_components/material-design-lite/material.min.css">
+    <script src="/bower_components/material-design-lite/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
-<!-- 3. Display the application -->
+<!-- 4. Display the application -->
 <body>
-<my-app>Loading!!!</my-app>
+    <!-- The drawer is always open in large screens. The header is always shown,
+      even in small screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+                mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <div class="mdl-layout-spacer"></div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                      mdl-textfield--floating-label mdl-textfield--align-right">
+                    <label class="mdl-button mdl-js-button mdl-button--icon"
+                           for="fixed-header-drawer-exp">
+                        <i class="material-icons">search</i>
+                    </label>
+                    <div class="mdl-textfield__expandable-holder">
+                        <input class="mdl-textfield__input" type="text" name="sample"
+                               id="fixed-header-drawer-exp">
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Angular2Do</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">My ToDo's</a>
+                <a class="mdl-navigation__link" href="">My House chores</a>
+                <a class="mdl-navigation__link" href="">My Payments</a>
+                <a class="mdl-navigation__link" href="">My Wish List</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content"><my-app>Loading...</my-app></div>
+        </main>
+    </div>
 </body>
 
 </html>
