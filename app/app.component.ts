@@ -1,7 +1,12 @@
-import {Component} from 'angular2/core'
+import {Component} from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
-import {HomeComponent} from './home/components/home.component'
-import {ToDoComponent} from './todo/components/todo.component'
+import {HomeComponent} from './home/components/home.component';
+import {ToDoComponent} from './todo/components/todo.component';
+
+interface navLink {
+    name:string,
+    label:string
+}
 
 // import { HeroService } from './hero.service';
 // import { DashboardComponent } from './dashboard.component';
@@ -38,11 +43,11 @@ import {ToDoComponent} from './todo/components/todo.component'
     // }
 ])
 export class AppComponent {
-    public currentState:string;
-    public navLinks:Array;
+    public navLinks:Array<navLink>;
+    public title:string;
     
     constructor() {
-        this.currentState = 'Home';
+        this.title = 'Angular2Do';
         this.navLinks = [
             {
                 name: 'Home',
