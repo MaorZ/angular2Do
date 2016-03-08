@@ -1,0 +1,16 @@
+<li class="mdl-list__item mdl-shadow--2dp">
+    <span class="mdl-list__item-primary-content">
+        <label mdlUpgrade class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"
+               [attr.for]="'todo_' + todoItem.id">
+            <input type="checkbox"
+                   [attr.id]="'todo_' + todoItem.id"
+                   [(ngModel)]="todoItem.completed"
+                   class="mdl-checkbox__input">
+            <span class="mdl-checkbox__label">
+                {{todoItem.text + ' is ' + (todoItem.completed?'Completed':'Not Completed')}}
+            </span>
+        </label>
+    </span>
+    <!--<span class="mdl-list__item-secondary-action">-->
+    <!--</span>-->
+</li>

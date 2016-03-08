@@ -1,3 +1,7 @@
+.mdl-layout__content {
+    padding-left: 10px;
+}
+
 .router-link-active {
-    color: #039be5 !important;
+    color: white !important;
 }
